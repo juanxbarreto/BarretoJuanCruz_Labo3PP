@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Datos</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    
+    <div id="formDatos">
+        <h1>Formulario de Datos</h1>
+        
+        <!-- Selector de filtro -->
+        <div id="Filtro">
+            <label for="filtro">Filtrar por tipo:</label>
+            <select id="filtro">
+                <option value="todos">Todos</option>
+                <option value="aereo">Aéreo</option>
+                <option value="terrestre">Terrestre</option>
+            </select>
+        </div>
+
+        <!-- Checkbox para ocultar atributos -->
+        <div id="Ocultar">
+            <label for="mostrarID">Mostrar ID <input type="checkbox" id="mostrarID" checked></label><br>
+            <label for="mostrarModelo">Mostrar Modelo <input type="checkbox" id="mostrarModelo" checked></label><br>
+            <label for="mostrarAnoFab">Mostrar Año de Fabricación <input type="checkbox" id="mostrarAnoFab" checked></label><br>
+            <label for="mostrarVelMax">Mostrar Velocidad Máxima <input type="checkbox" id="mostrarVelMax" checked></label><br>
+            <label for="mostrarCantPue">Mostrar Cantidad de Pasajeros <input type="checkbox" id="mostrarCantPue" checked></label><br>
+            <label for="mostrarCantRue">Mostrar Cantidad de Ruedas <input type="checkbox" id="mostrarCantRue" checked></label><br>
+            <label for="mostrarAltMax">Mostrar Altitud Máxima <input type="checkbox" id="mostrarAltMax" checked></label><br>
+            <label for="mostrarAutonomia">Mostrar Autonomía <input type="checkbox" id="mostrarAutonomia" checked></label><br>
+        </div>
+
+        <!-- Botón para calcular el promedio de velocidad máxima -->
+        <div id="Promedio">
+            <button id="calcularPromedioButton">Calcular Promedio de Velocidad Máxima</button>
+            <p id="promedioResultado"></p>
+        </div>
+        
+        <!-- Lista de objetos -->
+        <h2>Lista de Objetos:</h2>
+        <table id="tablaObjetos">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Modelo</th>
+                    <th>Año de Fabricación</th>
+                    <th>Velocidad Máxima</th>
+                    <th>Cantidad de Pasajeros</th>
+                    <th>Cantidad de Ruedas</th>
+                    <th>Altitud Máxima</th>
+                    <th>Autonomía</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpoTablaObjetos">
+                <!-- Los objetos se mostrarán aquí -->
+            </tbody>
+        </table>
+        
+        <!-- Botón para agregar un nuevo vehículo -->
+        <button id="btnAgregar">Agregar</button>
+
+    </div>
+    
+    <!-- Formulario de Alta/Baja/Modificación (ABM) -->
+    <div id="formAbm" style="display: none;">
+        <h2>Formulario de Alta/Baja/Modificación (ABM)</h2>
+    
+        <label for="tipoVehiculo">Tipo de Vehículo:</label>
+        <select id="tipoVehiculo">
+            <option value="Terrestre">Terrestre</option>
+            <option value="Aereo">Aéreo</option>
+        </select><br>
+    
+        <label for="id">ID:</label>
+        <input type="number" id="idInput" required><br>
+    
+        <label for="modelo">Modelo:</label>
+        <input type="text" id="modeloInput" required><br>
+    
+        <label for="anoFab">Año de Fabricación:</label>
+        <input type="number" id="anoFabInput" required><br>
+    
+        <label for="velMax">Velocidad Máxima:</label>
+        <input type="number" id="velMaxInput" required><br>
+    
+        <!-- Campos específicos para vehículos terrestres -->
+        <div id="terrestreCampos" style="display: none;">
+            <label for="cantPue">Cantidad de Pasajeros:</label>
+            <input type="number" id="cantPueInput"><br>
+    
+            <label for="cantRue">Cantidad de Ruedas:</label>
+            <input type="number" id="cantRueInput"><br>
+        </div>
+    
+        <!-- Campos específicos para vehículos aéreos -->
+        <div id="aereoCampos" style="display: none;">
+            <label for="altMax">Altitud Máxima:</label>
+            <input type="number" id="altMaxInput"><br>
+    
+            <label for="autonomia">Autonomía:</label>
+            <input type="number" id="autonomiaInput"><br>
+        </div>
+    
+        <button id="btnGuardar">Guardar</button>
+        <button id="btnCancelar">Cancelar</button>
+    </div>
+
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
